@@ -1,0 +1,139 @@
+$dark-blue: hsl(209, 23%, 22%); //(Dark Mode Elements)
+$very-dark-blue-bg: hsl(207, 26%, 17%); //(Dark Mode Background)
+$very-dark-blue-txt: hsl(200, 15%, 8%); //(Light Mode Text)
+$dark-gray: hsl(0, 0%, 52%); //(Light Mode Input)
+$very-light-gray: hsl(0, 0%, 98%); //(Light Mode Background)
+$white: hsl(0, 0%, 100%); //(Dark Mode Text & Light Mode Elements)
+
+$font-weight-light: 300;
+$font-weight-normal: 600;
+$font-weight-bold: 800;
+
+$homepage-item: 14px;
+$detail-page: 16px;
+
+html, body {
+  margin: 0 2rem;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans";
+  background-color: $very-light-gray;
+  color: $very-dark-blue-txt;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button {
+  font: inherit;
+}
+
+h6, p {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: $font-weight-bold;
+}
+
+.btn-dark-mode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-dark-mode:focus-within {
+  border: none;
+}
+
+.input-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.input, input:focus-visible{
+  width: 100%;
+  border: none;
+  outline:none
+}
+
+.search-input-layout{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.25rem;
+  background-color: $white;
+  padding: 0.75rem;
+  width: 75%;
+  color: $dark-gray;
+  box-shadow: 0 0 0.25rem 0;
+  gap:1.25rem
+}
+
+.search-icon{
+  margin-left: 1rem;
+}
+
+.region-input-layout{
+  position: relative;
+  justify-self: flex-end;
+  border-radius: 0.25rem;
+  background-color: $white;
+  padding: 0.75rem;
+  width: 30%;
+  color: $dark-gray;
+  box-shadow: 0 0 0.25rem 0;
+  gap:1.25rem
+}
+
+.options-layout{
+  position: absolute;
+  top: 110%;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  width: 100%;
+  gap: 0.25rem;
+  color: white;
+}
+
+.flags-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.flag-card{
+  background-color: $white;
+  color: $very-dark-blue-txt;
+  font-size: $homepage-item;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px;
+  align-items: stretch;
+}
+
+.card-info{
+  margin-left: 1.25rem;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+p::first-letter {
+  text-transform:capitalize;
+}
