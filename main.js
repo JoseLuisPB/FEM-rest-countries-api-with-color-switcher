@@ -15,10 +15,6 @@ function getAllCountries(){
   return fetch(url).then( response => response.json()).then(response => response);
 }
 
-function displayCountries(countryList){
-  
-}
-
 function loadCountryCards(countryList){
 
   const flagsLayout = document.getElementById('flags-layout');
@@ -26,6 +22,7 @@ function loadCountryCards(countryList){
 
   countryList.forEach( country => {
     const countryData = {
+      alpha3Code: country.alpha3Code,
       flag: country.flags.svg,
       name: country.name,
       population: country.population,
@@ -34,6 +31,8 @@ function loadCountryCards(countryList){
     }
     const flagLayoutDiv = document.createElement('div');
     flagLayoutDiv.classList.add('flag-card');
+    flagLayoutDiv.setAttribute('data-alphacode', countryData['alpha3Code'])
+    flagLayoutDiv.addEventListener('click', displayCountryDetail ,false);
     flagsLayout.appendChild(flagLayoutDiv);
 
     createCountryFlag(countryData, flagLayoutDiv)
@@ -91,6 +90,10 @@ function filterCountries(event) {
   const capitalLetterValue = value.charAt(0).toUpperCase() + value.slice(1)
   const countryListFiltered = countries.filter( country => country.name.includes(capitalLetterValue));
   loadCountryCards(countryListFiltered);
+}
+
+function displayCountryDetail(event){
+  window.location.href = `./country-detail/country-detail.html?alpha3Code=${event.currentTarget.dataset.alphacode}`;
 }
 
 function darkMode(){

@@ -1,0 +1,34 @@
+@import '../styles.scss';
+
+.detail-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top:2rem;
+}
+
+.info-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.capital-grid-placement{
+  grid-area: 5/1;
+}
+
+.borderLayout{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.borderBtnLayout{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.borderBtn{
+  @include custom-button;
+  width: 120px;
+  padding: unset;
+}
